@@ -1,0 +1,65 @@
+# ---- Unity core generated folders (should not be versioned)
+Library/
+Temp/
+Obj/
+obj/
+Logs/
+MemoryCaptures/
+Recordings/
+
+# ---- Build outputs (PC & WebGL)
+Build/
+Builds/
+Build*/
+
+# ---- User-specific Unity settings
+UserSettings/
+
+# ---- Visual Studio / Rider / VSCode
+.vs/
+.idea/
+.vscode/
+*.DotSettings.user
+
+# ---- Auto-generated project files
+*.csproj
+*.sln
+*.suo
+*.unityproj
+*.booproj
+*.pidb
+*.user
+*.userprefs
+*.tmp
+*.svd
+*.opendb
+*.VC.db
+*.pdb
+*.mdb
+
+# ---- Crash/diagnostic logs
+*.stacktrace
+*.log
+
+# ---- Addressables (generated build data)
+Assets/AddressableAssetsData/**/*.bin*
+Assets/StreamingAssets/aa/**
+
+# ---- OS-specific junk
+.DS_Store
+.DS_Store?
+Thumbs.db
+Desktop.ini
+
+# ---- Mobile artifacts (safe to ignore even if not used)
+.gradle/
+*.apk
+*.aab
+*.ipa
+
+# ---- Xcode/macOS build artifacts (safe to ignore even if not used)
+*.xcworkspace
+*.xcodeproj
+*.xcuserdatad/
+*.xcuserstate
+DerivedData/
