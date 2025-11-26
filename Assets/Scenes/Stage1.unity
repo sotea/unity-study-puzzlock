@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   effect: {fileID: 489136168478052464, guid: 46645a000511c1949b6dcb2bd0bcbe4a, type: 3}
+  unlockSound: {fileID: 8300000, guid: 6585bfc63cd783943b81d6ede0313d60, type: 3}
 --- !u!61 &50240259
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2188,6 +2189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   effect: {fileID: 489136168478052464, guid: 46645a000511c1949b6dcb2bd0bcbe4a, type: 3}
+  unlockSound: {fileID: 8300000, guid: 6585bfc63cd783943b81d6ede0313d60, type: 3}
 --- !u!61 &1549010566
 BoxCollider2D:
   m_ObjectHideFlags: 0
