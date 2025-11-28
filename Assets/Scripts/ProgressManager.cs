@@ -15,7 +15,7 @@ public class ProgressManager : MonoBehaviour
     }
 
     public StageProgressData Data { get; private set; }
-    private readonly HashSet<string> _clearedSet = new HashSet<string>();
+    private readonly HashSet<string> _completedSet = new HashSet<string>();
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Bootstrap()
@@ -45,40 +45,40 @@ public class ProgressManager : MonoBehaviour
     private void Load()
     {
         Data = SaveSystem.Load();
-        _clearedSet.Clear();
-        if (Data.clearedStageIds != null)
+        _completedSet.Clear();
+        if (Data.completedStageIds != null)
         {
-            for (int i = 0; i < Data.clearedStageIds.Count; i++)
+            for (int i = 0; i < Data.completedStageIds.Count; i++)
             {
-                _clearedSet.Add(Data.clearedStageIds[i]);
+                _completedSet.Add(Data.completedStageIds[i]);
             }
         }
     }
 
     private void Flush()
     {
-        Data.clearedStageIds = _clearedSet.ToList();
+        Data.completedStageIds = _completedSet.ToList();
         SaveSystem.Save(Data);
     }
 
     // 進捗データを初期化し、セーブファイルも削除する
     public void ResetAllProgress()
     {
-        _clearedSet.Clear();
+        _completedSet.Clear();
         Data = new StageProgressData();
         SaveSystem.Delete();
     }
 
-    public bool IsCleared(string stageId)
+    public bool IsCompleted(string stageId)
     {
         if (string.IsNullOrEmpty(stageId)) return false;
-        return _clearedSet.Contains(stageId);
+        return _completedSet.Contains(stageId);
     }
 
-    public bool MarkCleared(string stageId)
+    public bool MarkCompleted(string stageId)
     {
         if (string.IsNullOrEmpty(stageId)) return false;
-        if (_clearedSet.Add(stageId))
+        if (_completedSet.Add(stageId))
         {
             Flush();
             return true;

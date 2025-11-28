@@ -43,6 +43,6 @@ public class StageManager : MonoBehaviour
         // 進捗を記録（ステージIDはシーン名を使用）
         var stageId = SceneManager.GetActiveScene().name;
         Debug.Log("GameClear: " + stageId);
-        ProgressManager.I.MarkCleared(stageId);
+        ProgressManager.I.MarkCompleted(stageId);
     }
 }

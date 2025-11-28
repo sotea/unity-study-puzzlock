@@ -26,9 +26,9 @@ public class StageSelect : MonoBehaviour
             }
         }
 
-        // クリア済みの可視化（簡易表示）
+        // 完了済みの可視化（簡易表示）
         if (_image != null)
-            _image.enabled = ProgressManager.I.IsCleared(gameObject.name);
+            _image.enabled = ProgressManager.I.IsCompleted(gameObject.name);
         _button.onClick.AddListener(OnStageButton);
     }
 
